@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-
+var users = [];
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const nameVal = document.getElementById("name").value;
@@ -7,8 +7,6 @@ form.addEventListener("submit", function (event) {
   const ageVal = document.getElementById("age").value;
 
   console.log(nameVal);
-
-  errorMessages.innerHtml = "";
 
   if (!nameVal) {
     alert("Please enter your full name!");
@@ -19,7 +17,14 @@ form.addEventListener("submit", function (event) {
     return;
   }
 
+  var user = {
+    name: nameVal,
+    email: emailVal,
+    age: ageVal,
+  };
 
-  form.submit();
+  users.push(user);
   form.reset();
+
+  console.warn("added", { users });
 });
