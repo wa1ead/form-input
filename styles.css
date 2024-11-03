@@ -52,15 +52,3 @@ button {
   border-radius: 0.5rem;
   cursor: pointer;
 }
-
-
-p {
-  text-align: left;
-  color: white;
-  font-size:small;
-  font-weight: light;
-  background-color: red;
-  padding: 0.25rem;
-  padding-left: 1rem;
-  border-radius: 1rem;
-}
