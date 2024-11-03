@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 var users = [];
+
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const nameVal = document.getElementById("name").value;
@@ -27,4 +28,6 @@ form.addEventListener("submit", function (event) {
   form.reset();
 
   console.warn("added", { users });
+
+  localStorage.setItem("MyUsers", JSON.stringify(users));
 });
