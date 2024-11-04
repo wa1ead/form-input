@@ -26,7 +26,20 @@ form.addEventListener("submit", function (event) {
 
   users.push(user);
   localStorage.setItem("MyUsers", JSON.stringify(users));
-  form.reset();
-
   console.warn("added", { users });
+
+  const list = document.querySelector("ol");
+
+  const usersList = JSON.parse(localStorage.getItem("MyUsers"));
+  console.log(usersList);
+
+  if (usersList) {
+    usersList.map((user) => {
+      list.innerHTML += `<li>${user.name}</li>`;
+    });
+  } else {
+    console.error("No users to show");
+  }
+
+  form.reset();
 });
