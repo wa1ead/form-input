@@ -25,9 +25,8 @@ form.addEventListener("submit", function (event) {
   };
 
   users.push(user);
+  localStorage.setItem("MyUsers", JSON.stringify(users));
   form.reset();
 
   console.warn("added", { users });
-
-  localStorage.setItem("MyUsers", JSON.stringify(users));
 });
